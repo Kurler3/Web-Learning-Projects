@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold: #D4AF37;
+  --background-grey:#D3D3D3;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-grey);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#title {
+  color: var(--gold);
+  font-size: 45px;
+  padding: 0 20px 0px 20px;
+  font-family: 'Dancing Script', cursive;
+}
+
+.list {
+  padding: 20px;
+  list-style: none;
+  width: 75%;
+}
+
+.list-item {
+  padding: 10px;
+  background: white;
+  margin-top: 5vh;
+  width: 100%;
+  border-radius: 15px;
+  
+}
+
+.item-permanent {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0px 15px 0px;
+  width: 97%;
+}
+
+.item-permanent h1 {
+  font-size: 17px;
+  color: black;
+  letter-spacing: 3px;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.item-permanent i {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--gold);
+  font-size: 25px;
+  transition: all 0.5s;
+}
+
+.list-item p {
+  color: black;
+  display: none;
+  padding: 10px;
+  border-top: 2px solid #DCDCDC;
+}
+
+.item-permanent i:hover {
+  transform: rotate(90deg);
+}
+
+
