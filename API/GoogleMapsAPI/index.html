@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <h1>My Google Map</h1>
+  <div id="map"></div>
+
+  <script>
+    let map;
+
+    
+
+    function initMap() {
+      let options = {
+      zoom: 3,
+      center: {lat: -34.397, lng: 150.644 }
+      }
+
+      map = new google.maps.Map(document.getElementById("map"), options);
+      
+
+      let marker = new google.maps.Marker({
+        position: {lat: -34.397, lng: 150.644 },
+        map:map
+      });
+
+      let infoWindow = new google.maps.InfoWindow({
+        content: '<h1>Lynn MA</h1>'
+      });
+
+      marker.addListener('click', () => {
+        infoWindow.open(map, marker);
+      });
+    }
+  </script>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASNmRZtIcYXt880737auKNiYKDVkGci8A&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
+</body>
+</html>
