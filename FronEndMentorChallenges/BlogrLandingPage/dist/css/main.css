@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: "Overpass", sans-serif;
+  color: white;
+}
+
+header .nav {
+  width: 90%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em 0;
+}
+
+header .nav > h1 {
+  font-weight: 600;
+}
+
+header .nav > i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+header .header-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 1.5em;
+}
+
+header .header-container-text {
+  text-align: center;
+  width: 65%;
+  padding: 1em 0;
+  margin: 0 auto;
+}
+
+header .header-container-text h2 {
+  padding: 0.4em 1.5em;
+}
+
+header .header-container-text p {
+  font-size: 0.85rem;
+  padding: 0 2em;
+}
+
+header .header-container-buttons {
+  width: 65%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2em;
+}
+
+header .header-container-buttons .btn {
+  font-family: "Ubuntu", sans-serif;
+  padding: 0.6rem 0.9rem;
+  border-radius: 1rem;
+  border: white 1px solid;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+header .header-container-buttons #start-btn {
+  color: #ff525d;
+  background: white;
+}
+
+header .header-container-buttons #learn-more-btn {
+  color: white;
+  background: transparent;
+}
+
+header {
+  width: 100vw;
+  height: 70vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff7a85), to(#ff525d));
+  background: linear-gradient(#ff7a85, #ff525d);
+  background-size: cover;
+  overflow: hidden;
+  border-bottom-left-radius: 4rem;
+}
+
+main {
+  width: 100vw;
+  overflow: hidden;
+  color: #1f3f5b;
+}
+
+main .main-intro {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 5em;
+  padding: 2em;
+}
+
+main .main-intro-img-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 2.4em;
+}
+
+main .main-intro-img-container img {
+  max-height: 100%;
+  max-width: 100%;
+}
+/*# sourceMappingURL=main.css.map */

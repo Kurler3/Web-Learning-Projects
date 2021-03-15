@@ -1,0 +1,69 @@
+header {
+
+  .nav {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+
+    & > h1 {
+      font-weight: map-get($font-weights-overpass, bold);
+    }
+    & > i {
+      font-size: 2rem;
+      cursor:pointer;
+    }
+  }
+
+  .#{&}-container {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 1.5em;
+
+    &-text {
+      text-align: center;
+      width: 65%;
+      padding: 1em 0;
+      margin: 0 auto;
+
+      h2 {
+        padding: 0.4em 1.5em;
+      }
+
+      p {
+        font-size: 0.85rem;
+        padding: 0 2em;
+      }
+    }
+
+    &-buttons {
+      width: 65%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 2em;
+
+      .btn {
+        font-family: $ubuntu-font-family;
+        padding: 0.6rem 0.9rem;
+        border-radius: 1rem;
+        border: white 1px solid;
+        font-weight: map-get($font-weights-ubuntu, bold);
+        font-size: 0.75rem;
+        cursor:pointer;
+      }
+
+      #start-btn {
+        color: $light-red;
+        background: white;
+      }
+
+      #learn-more-btn {
+        color:white;
+        background: transparent;
+      }
+    }
+  }
+}

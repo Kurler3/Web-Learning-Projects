@@ -1,0 +1,29 @@
+$light-red: hsl(356, 100%, 66%);
+$very-light-red:hsl(355, 100%, 74%);
+$very-dark-blue:hsl(208, 49%, 24%);
+$grayish-blue: hsl(240, 2%, 79%);
+$very-dark-grayish-blue:hsl(207, 13%, 34%);
+$very-dark-black-blue: hsl(240, 10%, 16%);
+$overpass-font-family:'Overpass', sans-serif;
+$ubuntu-font-family:'Ubuntu', sans-serif;
+$font-weights-overpass: (
+  'regular': 300,
+  'bold':600
+);
+$font-weights-ubuntu: (
+  'regular': 400,
+  'slightly-bold': 500,
+  'bold': 700
+);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: $overpass-font-family;
+  color: white;
+}
