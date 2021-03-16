@@ -1,0 +1,30 @@
+.footer {
+  &-title {
+    padding: 4em;
+  }
+  &-nav {
+    padding: 2em;
+    text-align: center;
+    p {
+      padding: 1em 0 1.5em 0;
+    }
+
+    .footer-list {
+      list-style: none;
+      font-family: $overpass-font-family;
+      .footer-item {
+        padding-bottom: 0.7em;
+        a {
+          text-decoration: none;
+          color: $grayish-blue;
+
+          &:hover {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+    }
+
+
+  }
+}
