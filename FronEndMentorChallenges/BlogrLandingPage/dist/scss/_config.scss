@@ -15,7 +15,10 @@ $font-weights-ubuntu: (
   'slightly-bold': 500,
   'bold': 700
 );
+
 $transition: all 0.3s ease-in-out;
+
+$desktop-min-width: 700px;
 
 * {
   margin: 0;

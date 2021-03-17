@@ -16,9 +16,10 @@ header {
     }
 
     .mobile-menu-container {
-      position: fixed;
+      position: absolute;
       left: 15%;
       top: 27%;
+      box-shadow: 3px 1px 5px 6px lightgrey; 
       margin-top: -50px;
       background: white;
       color: $very-dark-blue;
@@ -35,8 +36,10 @@ header {
           padding: 2em;
           font-size: 0.8rem;
           .mobile-menu-item {
+            cursor:pointer;
             padding-bottom: 2em;
             margin: 0 auto;
+            
             &-container {
               cursor: pointer;
               display: flex;
@@ -56,11 +59,12 @@ header {
               margin-top: 0.8em;
               border-radius: 0.3rem;
               display: none;
+
               &-list {
                 list-style: none;
 
                 .mobile-menu-item-item-extra {
-                  padding: 1.2em 0;
+                  padding: 0.8em 0;
 
                   p {
                     font-family: $ubuntu-font-family;
@@ -130,10 +134,8 @@ header {
     }
 
     &-buttons {
-      width: 65%;
-      margin: 0 auto;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       padding: 2em;
 
       .btn {
@@ -144,6 +146,7 @@ header {
         font-weight: map-get($font-weights-ubuntu, bold);
         font-size: 0.75rem;
         cursor:pointer;
+        margin: 0 1em 0 1em;
       }
 
       #start-btn {
