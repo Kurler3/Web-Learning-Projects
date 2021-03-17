@@ -1,3 +1,4 @@
+/* Media Queries */
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +33,12 @@ header .nav > i {
   cursor: pointer;
 }
 
+@media (min-width: 700px) {
+  header .nav > i {
+    display: none;
+  }
+}
+
 header .nav .mobile-menu-container {
   position: absolute;
   left: 15%;
@@ -46,10 +53,31 @@ header .nav .mobile-menu-container {
   display: none;
 }
 
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container {
+    position: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin-top: -1em;
+    width: 100%;
+    color: white;
+  }
+}
+
 header .nav .mobile-menu-container .mobile-menu-list-container {
   width: 90%;
   margin: 0 auto;
   border-bottom: 1px solid #c8c8cb;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-list-container {
+    border-bottom: none;
+  }
 }
 
 header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list {
@@ -59,10 +87,26 @@ header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list
   font-size: 0.8rem;
 }
 
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item {
   cursor: pointer;
   padding-bottom: 2em;
   margin: 0 auto;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item {
+    padding: 0;
+    margin: 0;
+    padding: 0 0 0 2em;
+  }
 }
 
 header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container {
@@ -75,12 +119,25 @@ header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 0.8rem;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container {
+    width: 100%;
+  }
 }
 
 header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container i {
   margin-left: 0.4em;
   font-size: 0.6rem;
   color: #ff525d;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container i {
+    color: white;
+  }
 }
 
 header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra {
@@ -124,14 +181,34 @@ header .nav .mobile-menu-container .mobile-menu-login-signup-container {
           align-items: center;
 }
 
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-login-signup-container {
+    position: absolute;
+    top: 2.4rem;
+    right: 2.5rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 0 1em 0 1em;
+  }
+}
+
 header .nav .mobile-menu-container .mobile-menu-login-signup-container h3 {
-  padding: 0.4em;
+  padding: 0 2em 0 1em;
   cursor: pointer;
 }
 
 header .nav .mobile-menu-container .mobile-menu-login-signup-container h3 a {
   text-decoration: none;
   color: #25252d;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-login-signup-container h3 a {
+    color: white;
+    font-size: 1rem;
+  }
 }
 
 header .nav .mobile-menu-container .mobile-menu-login-signup-container button {
@@ -143,6 +220,15 @@ header .nav .mobile-menu-container .mobile-menu-login-signup-container button {
   margin-top: 1em;
   cursor: pointer;
   font-weight: 600;
+}
+
+@media (min-width: 700px) {
+  header .nav .mobile-menu-container .mobile-menu-login-signup-container button {
+    padding: 0.5em  3em 0.5em 3em;
+    margin-top: 0;
+    color: #ff525d;
+    background: white;
+  }
 }
 
 header .header-container {

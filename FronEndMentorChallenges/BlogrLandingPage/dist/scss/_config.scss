@@ -20,6 +20,13 @@ $transition: all 0.3s ease-in-out;
 
 $desktop-min-width: 700px;
 
+/* Media Queries */ 
+@mixin desktop {
+  @media (min-width: $desktop-min-width) {
+    @content; 
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

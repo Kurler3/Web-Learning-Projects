@@ -13,6 +13,10 @@ header {
     & > i {
       font-size: 2rem;
       cursor:pointer;
+
+      @include desktop {
+        display: none;
+      }
     }
 
     .mobile-menu-container {
@@ -26,31 +30,63 @@ header {
       width: 70%;
       border-radius: 0.3rem;
       display: none;
+
+      @include desktop {
+        position:inherit;
+        display: flex;
+        background: transparent;
+        box-shadow: none;
+        margin-top: -1em;
+        width: 100%;
+        color: white;
+      }
       .mobile-menu-list-container {
         width: 90%;
         margin: 0 auto;
         border-bottom: 1px solid $grayish-blue;
+
+        @include desktop {
+          border-bottom: none;
+        }
         .mobile-menu-list {
           text-align: center;
           list-style: none;
           padding: 2em;
           font-size: 0.8rem;
+
+          @include desktop {
+            display: flex;
+
+          }
           .mobile-menu-item {
             cursor:pointer;
             padding-bottom: 2em;
             margin: 0 auto;
             
+            @include desktop{
+              padding: 0;
+              margin:0;
+              padding: 0 0 0 2em;
+            }
             &-container {
               cursor: pointer;
               display: flex;
               width: 25%;
               margin: 0 auto;
               align-items: center;
-
+              font-size: 0.8rem;
+              
+              @include desktop {
+                width: 100%;
+              }
               i {
                 margin-left: 0.4em;
                 font-size: 0.6rem;
                 color: $light-red;
+                
+                @include desktop {
+                  color:white;
+                }
               }
             }
 
@@ -88,12 +124,26 @@ header {
         flex-direction: column;
         padding: 2em;
         align-items: center;
+
+        @include desktop {
+          position: absolute;
+          top: 2.4rem;
+          right: 2.5rem;
+          flex-direction: row;
+          padding: 0 1em 0 1em;
+        }
         h3 {
-          padding: 0.4em;
+          padding: 0 2em 0 1em;
           cursor: pointer;
+
           a {
             text-decoration: none;
             color: $very-dark-black-blue;
+
+            @include desktop {
+            color: white;
+            font-size: 1rem;
+            }
           }
         }
 
@@ -106,6 +156,13 @@ header {
           margin-top: 1em;
           cursor: pointer;
           font-weight: map-get($font-weights-overpass, bold);
+
+          @include desktop {
+            padding: 0.5em  3em 0.5em 3em;
+            margin-top: 0;
+            color: $light-red;
+            background: white;
+          }
         }
       }
     }

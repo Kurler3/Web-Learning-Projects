@@ -2,20 +2,64 @@ const mobileMenuBtn = document.querySelector('#nav-menu-btn');
 
 const mobileMenuContainer = document.querySelector('.mobile-menu-container');
 
-
 const mobileNavMenuItems = document.querySelectorAll('.mobile-menu-item');
-
-
 
 const main = document.querySelector('main');
 
 const footer = document.querySelector('footer');
 
-
+const desktopMinWidth = 700;
 
 let isMobileMenuOpen = false;
 
 let currentMobileNavMenuOpenID;
+
+let isDesktopSize = document.body.offsetWidth >= desktopMinWidth;
+
+window.addEventListener('resize', () => {
+  isDesktopSize = document.body.offsetWidth >= desktopMinWidth;
+  
+  // If the it enters desktop size then close the current currentOpenID, 
+  //make it null and change the colors of the nav list items to white and
+  // make the display of the nav bar flex 
+  if(isDesktopSize){
+    mobileNavMenuItems.forEach((itemLoop) => {
+          if(itemLoop.id == currentMobileNavMenuOpenID) {
+            itemLoop.childNodes[3].style.display = 'none';
+          }
+          changeColorAndIcon(itemLoop, false, isDesktopSize);
+        });
+    currentMobileNavMenuOpenID = null;
+
+    // If the mobile menu was closed, then have to manually change it.
+    mobileMenuContainer.style.display = 'flex';
+
+    if(isMobileMenuOpen){
+      mobileMenuBtn.classList.remove('fa-times');
+      mobileMenuBtn.classList.add('fa-bars');
+    }
+    
+    isMobileMenuOpen = false;
+  }else {
+    // If it enters mobile size then reset the currentOpenID and close it and also make the color of the 
+    // list items to grayish blue and change the class of the button to the bars
+    mobileNavMenuItems.forEach((itemLoop) => {
+          if(itemLoop.id == currentMobileNavMenuOpenID) {
+            itemLoop.childNodes[3].style.display = 'none';
+          }
+          changeColorAndIcon(itemLoop, false, isDesktopSize);
+        });
+    currentMobileNavMenuOpenID = null;
+    mobileMenuContainer.style.display = 'none';
+    
+    mobileMenuBtn.classList.remove('fa-times');
+      mobileMenuBtn.classList.add('fa-bars');
+
+    isMobileMenuOpen = false;
+  }
+});
+
+
 
 mobileMenuBtn.addEventListener('click', e => {
   // If the menu is open then we have to close it, change the icon and display main and footer again. 
@@ -58,10 +102,8 @@ mobileNavMenuItems.forEach((item) => {
     // Close the extra if clicked on the same and it was open
     if(item.id==currentMobileNavMenuOpenID) {
       item.childNodes[3].style.display = 'none';
-
-      item.children[0].style.color = 'hsl(208, 49%, 24%)';
-      item.children[0].children[1].classList.remove('fa-chevron-up');
-      item.children[0].children[1].classList.add('fa-chevron-down');
+      
+      changeColorAndIcon(item, false, isDesktopSize);
       
       currentMobileNavMenuOpenID = null;
     }else{
@@ -71,10 +113,8 @@ mobileNavMenuItems.forEach((item) => {
         mobileNavMenuItems.forEach((itemLoop) => {
           if(itemLoop.id == currentMobileNavMenuOpenID) {
             itemLoop.childNodes[3].style.display = 'none';
-
-            item.children[0].style.color = 'hsl(208, 49%, 24%)';
-            item.children[0].children[1].classList.remove('fa-chevron-up');
-            item.children[0].children[1].classList.add('fa-chevron-down');
+            
+            changeColorAndIcon(item, false, isDesktopSize);
           }
         })
       }
@@ -83,9 +123,33 @@ mobileNavMenuItems.forEach((item) => {
 
       item.childNodes[3].style.display = 'block';
 
-      item.children[0].style.color = 'grey';
-      item.children[0].children[1].classList.add('fa-chevron-up');
-      item.children[0].children[1].classList.remove('fa-chevron-down');
+      changeColorAndIcon(item, true, isDesktopSize);
     }
   });
 });
+
+
+function changeColorAndIcon(item, isOpening, isDesktop) {
+  if(isDesktop) {
+    if(isOpening){
+      item.children[0].style.color = 'grey';
+      changeIcon(item,'fa-chevron-up', 'fa-chevron-down');
+    }else{
+      item.children[0].style.color = 'white';
+      changeIcon(item,'fa-chevron-down', 'fa-chevron-up');
+    }
+  }else{
+    if(isOpening) {
+      item.children[0].style.color = 'grey';
+      changeIcon(item,'fa-chevron-up', 'fa-chevron-down');
+    }else {
+      item.children[0].style.color = 'hsl(208, 49%, 24%)';
+      changeIcon(item,'fa-chevron-down', 'fa-chevron-up');
+    }
+  }
+}
+
+function changeIcon(item, classToAdd, classToRemove) {
+  item.children[0].children[1].classList.add(classToAdd);
+  item.children[0].children[1].classList.remove(classToRemove);
+}
