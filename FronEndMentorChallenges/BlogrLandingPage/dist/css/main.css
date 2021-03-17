@@ -32,6 +32,116 @@ header .nav > i {
   cursor: pointer;
 }
 
+header .nav .mobile-menu-container {
+  position: fixed;
+  left: 15%;
+  top: 27%;
+  margin-top: -50px;
+  background: white;
+  color: #1f3f5b;
+  width: 70%;
+  border-radius: 0.3rem;
+  display: none;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container {
+  width: 90%;
+  margin: 0 auto;
+  border-bottom: 1px solid #c8c8cb;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list {
+  text-align: center;
+  list-style: none;
+  padding: 2em;
+  font-size: 0.8rem;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item {
+  padding-bottom: 2em;
+  margin: 0 auto;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 25%;
+  margin: 0 auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-container i {
+  margin-left: 0.4em;
+  font-size: 0.6rem;
+  color: #ff525d;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra {
+  background: lightgrey;
+  margin-top: 0.8em;
+  border-radius: 0.3rem;
+  display: none;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra-list {
+  list-style: none;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra-list .mobile-menu-item-item-extra {
+  padding: 1.2em 0;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra-list .mobile-menu-item-item-extra p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  cursor: pointer;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+header .nav .mobile-menu-container .mobile-menu-list-container .mobile-menu-list .mobile-menu-item-extra-list .mobile-menu-item-item-extra p p:hover {
+  color: white;
+}
+
+header .nav .mobile-menu-container .mobile-menu-login-signup-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .nav .mobile-menu-container .mobile-menu-login-signup-container h3 {
+  padding: 0.4em;
+  cursor: pointer;
+}
+
+header .nav .mobile-menu-container .mobile-menu-login-signup-container h3 a {
+  text-decoration: none;
+  color: #25252d;
+}
+
+header .nav .mobile-menu-container .mobile-menu-login-signup-container button {
+  padding: 1em 2.5em 1em 2.5em;
+  background: #ff525d;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  margin-top: 1em;
+  cursor: pointer;
+  font-weight: 600;
+}
+
 header .header-container {
   width: 90%;
   height: 100%;
