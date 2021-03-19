@@ -4,6 +4,8 @@ const mobileMenuContainer = document.querySelector('.mobile-menu-container');
 
 const mobileNavMenuItems = document.querySelectorAll('.mobile-menu-item');
 
+const headerContainer = document.querySelector(".header-container");
+
 const main = document.querySelector('main');
 
 const footer = document.querySelector('footer');
@@ -40,6 +42,8 @@ window.addEventListener('resize', () => {
     }
     
     isMobileMenuOpen = false;
+
+    headerContainer.style.display = 'block';
   }else {
     // If it enters mobile size then reset the currentOpenID and close it and also make the color of the 
     // list items to grayish blue and change the class of the button to the bars
@@ -55,7 +59,11 @@ window.addEventListener('resize', () => {
     mobileMenuBtn.classList.remove('fa-times');
       mobileMenuBtn.classList.add('fa-bars');
 
+  
+    
     isMobileMenuOpen = false;
+
+    
   }
 });
 
@@ -77,6 +85,9 @@ mobileMenuBtn.addEventListener('click', e => {
 
     // Update the isOpen variable
     isMobileMenuOpen = false;
+
+    // Display the header container
+    headerContainer.style.display = 'block';
   
   // If the menu is closed, then we want to open it, change the icon and change the display of main and footer to none.
   }else {
@@ -93,6 +104,9 @@ mobileMenuBtn.addEventListener('click', e => {
 
     // Update the isOpen variable
     isMobileMenuOpen = true;
+
+    // Hide the header container
+    headerContainer.style.display = 'none';
   }
 })
 
@@ -114,7 +128,7 @@ mobileNavMenuItems.forEach((item) => {
           if(itemLoop.id == currentMobileNavMenuOpenID) {
             itemLoop.childNodes[3].style.display = 'none';
             
-            changeColorAndIcon(item, false, isDesktopSize);
+            changeColorAndIcon(itemLoop, false, isDesktopSize);
           }
         })
       }

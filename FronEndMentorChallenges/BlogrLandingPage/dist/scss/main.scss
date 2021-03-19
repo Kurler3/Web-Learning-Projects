@@ -30,5 +30,10 @@ main{
   background: linear-gradient(hsl(237, 17%, 21%), hsl(237, 23%, 32%));
   border-top-right-radius: 7rem;
   font-family: $ubuntu-font-family;
+
+  @include desktop {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 

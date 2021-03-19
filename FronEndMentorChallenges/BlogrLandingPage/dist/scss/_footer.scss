@@ -9,6 +9,9 @@
       padding: 1em 0 1.5em 0;
     }
 
+    @include desktop {
+      padding:2em 5em;
+    }
     .footer-list {
       list-style: none;
       font-family: $overpass-font-family;
@@ -26,5 +29,14 @@
     }
 
 
+  }
+
+  @include desktop {
+    .desktop-footer-container{
+      display: flex;
+      width: 80%;
+      margin: 0 auto;
+    }
+    
   }
 }
